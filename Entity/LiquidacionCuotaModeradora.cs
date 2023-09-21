@@ -8,12 +8,14 @@ namespace Entity
 {
     public class LiquidacionCuotaModeradora
     {
-        private int numLiquidacion {  get; set; }
-        private int idPaciente { get; set;}
-        private string tipoAfiliacion { get; set; }
-        private double salarioDevengado { get; set; }
-        private double valorServicio { get; set; }
-
+        public int numLiquidacion {  get; set; }
+        public int idPaciente { get; set;}
+        public string tipoAfiliacion { get; set; }
+        public double salarioDevengado { get; set; }
+        public double valorServicio { get; set; }
+        public DateTime fechaLiquidacion { get; set }
+        public double cuotaModerada { get; set }
+        public double tarifa { get; set }
 
     }
 }
