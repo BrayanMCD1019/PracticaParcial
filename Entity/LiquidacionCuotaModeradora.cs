@@ -13,9 +13,24 @@ namespace Entity
         public string tipoAfiliacion { get; set; }
         public double salarioDevengado { get; set; }
         public double valorServicio { get; set; }
-        public DateTime fechaLiquidacion { get; set }
-        public double cuotaModerada { get; set }
-        public double tarifa { get; set }
+        public DateTime fechaLiquidacion { get; set; }
+        public double cuotaModerada { get; set; }
+        public double tarifa { get; set; }
 
+        public LiquidacionCuotaModeradora()
+        {
+        }
+
+        public LiquidacionCuotaModeradora(int numLiquidacion, int idPaciente, string tipoAfiliacion, double salarioDevengado, double valorServicio, DateTime fechaLiquidacion, double cuotaModerada, double tarifa)
+        {
+            this.numLiquidacion = numLiquidacion;
+            this.idPaciente = idPaciente;
+            this.tipoAfiliacion = tipoAfiliacion;
+            this.salarioDevengado = salarioDevengado;
+            this.valorServicio = valorServicio;
+            this.fechaLiquidacion = fechaLiquidacion;
+            this.cuotaModerada = cuotaModerada;
+            this.tarifa = tarifa;
+        }
     }
 }
