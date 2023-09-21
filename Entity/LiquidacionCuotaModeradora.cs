@@ -14,5 +14,6 @@ namespace Entity
         private double salarioDevengado { get; set; }
         private double valorServicio { get; set; }
 
+
     }
 }
