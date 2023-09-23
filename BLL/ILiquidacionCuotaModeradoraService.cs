@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DLL
+namespace BLL
 {
     public interface ILiquidacionCuotaModeradoraService
     {
-        void CalcularCuotaModeradora(LiquidacionCuotaModeradora liquidacion);
+        double CalcularCuotaModeradora(LiquidacionCuotaModeradora liquidacion);
         List<LiquidacionCuotaModeradora> ObtenerTodasLasLiquidaciones();
         List<LiquidacionCuotaModeradora> ConsultarPorTipoAfiliacion(string tipoAfiliacion);
         List<LiquidacionCuotaModeradora> FiltrarPorFecha(DateTime fechaInicio, DateTime fechaFin);

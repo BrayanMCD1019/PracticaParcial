@@ -1,4 +1,4 @@
-﻿using DLL;
+﻿using DAL;
 using Entity;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,27 @@ namespace BLL
 {
     public class LiquidacionCuotaModeradoraService : ILiquidacionCuotaModeradoraService
     {
-        void ILiquidacionCuotaModeradoraService.CalcularCuotaModeradora(LiquidacionCuotaModeradora liquidacion)
+        LiquidacionCuotaModeradoraRepository liquidacionCuotaModeradoraRepository = null;
+        private List<LiquidacionCuotaModeradora> liquidacionCuotaModeradoraList = null;
+
+        public LiquidacionCuotaModeradoraService()
+        {
+            liquidacionCuotaModeradoraRepository = new LiquidacionCuotaModeradoraRepository();
+
+        }
+
+        public String Guardar(LiquidacionCuotaModeradora liquidacionCuotaModeradora)
+        {
+            if (liquidacionCuotaModeradora == null)
+            {
+                return "no se puede agregar liquidaciones nulas o sin informacion";
+
+            }
+            var msg = (liquidacionCuotaModeradoraRepository.Guardar(liquidacionCuotaModeradora));
+            return msg;
+        }
+
+        double ILiquidacionCuotaModeradoraService.CalcularCuotaModeradora(LiquidacionCuotaModeradora liquidacion)
         {
             throw new NotImplementedException();
         }
