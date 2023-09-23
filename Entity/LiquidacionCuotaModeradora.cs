@@ -36,5 +36,6 @@ namespace Entity
         {
             return $"{numLiquidacion};{idPaciente};{tipoAfiliacion};{salarioDevengado};{valorServicio};{fechaLiquidacion};{cuotaModerada};{tarifa};";
         }
+
     }
 }

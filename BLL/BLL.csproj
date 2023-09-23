@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ILiquidacionCuotaModeradoraService.cs" />
     <Compile Include="LiquidacionCuotaModeradoraService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
