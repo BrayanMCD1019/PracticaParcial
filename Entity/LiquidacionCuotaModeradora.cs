@@ -32,5 +32,9 @@ namespace Entity
             this.cuotaModerada = cuotaModerada;
             this.tarifa = tarifa;
         }
+        public override string ToString()
+        {
+            return $"{numLiquidacion};{idPaciente};{tipoAfiliacion};{salarioDevengado};{valorServicio};{fechaLiquidacion};{cuotaModerada};{tarifa};";
+        }
     }
 }
