@@ -1,2 +1,6 @@
 D:\Jorman\Desktop\Proyecto\PracticaParcial\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
 D:\Jorman\Desktop\Proyecto\PracticaParcial\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\Presentacion\obj\Debug\Presentacion.exe
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\Presentacion\obj\Debug\Presentacion.pdb

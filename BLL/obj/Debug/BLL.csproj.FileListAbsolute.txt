@@ -1,2 +1,4 @@
 D:\Jorman\Desktop\Proyecto\PracticaParcial\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
 D:\Jorman\Desktop\Proyecto\PracticaParcial\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
