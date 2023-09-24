@@ -3,3 +3,6 @@ D:\Jorman\Desktop\Proyecto\PracticaParcial\DAL\obj\Debug\DAL.csproj.CoreCompileI
 D:\Jorman\Desktop\Proyecto\TallerProgramacion\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
 D:\Jorman\Desktop\Proyecto\TallerProgramacion\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 D:\Jorman\Desktop\Proyecto\TallerProgramacion\DAL\obj\Debug\DAL.pdb
+C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\DAL\obj\Debug\DAL.pdb

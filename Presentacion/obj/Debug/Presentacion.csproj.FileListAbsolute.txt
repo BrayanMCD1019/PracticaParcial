@@ -4,3 +4,7 @@ D:\Jorman\Desktop\Proyecto\TallerProgramacion\Presentacion\obj\Debug\Presentacio
 D:\Jorman\Desktop\Proyecto\TallerProgramacion\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
 D:\Jorman\Desktop\Proyecto\TallerProgramacion\Presentacion\obj\Debug\Presentacion.exe
 D:\Jorman\Desktop\Proyecto\TallerProgramacion\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\Presentacion\obj\Debug\Presentacion.pdb

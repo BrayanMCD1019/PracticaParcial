@@ -10,3 +10,9 @@ D:\Jorman\Desktop\Proyecto\TallerProgramacion\Entity\obj\Debug\Entity.csproj.Ass
 D:\Jorman\Desktop\Proyecto\TallerProgramacion\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
 D:\Jorman\Desktop\Proyecto\TallerProgramacion\Entity\obj\Debug\Entity.dll
 D:\Jorman\Desktop\Proyecto\TallerProgramacion\Entity\obj\Debug\Entity.pdb
+C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\Entity\bin\Debug\Entity.dll
+C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\Entity\bin\Debug\Entity.pdb
+C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\Entity\obj\Debug\Entity.csproj.AssemblyReference.cache
+C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\Entity\obj\Debug\Entity.dll
+C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\Entity\obj\Debug\Entity.pdb
