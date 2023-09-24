@@ -1,0 +1,2 @@
+D:\Jorman\Desktop\Proyecto\PracticaParcial\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+D:\Jorman\Desktop\Proyecto\PracticaParcial\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache

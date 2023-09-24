@@ -73,7 +73,7 @@ namespace DAL
                     }
                 }
             }
-            catch (IOException ex)
+            catch (IOException)
             {
                 Console.WriteLine("Error al Eliminar la liquidacion...");
             }

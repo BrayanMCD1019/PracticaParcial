@@ -10,6 +10,7 @@ namespace Presentacion
 {
     internal class Program
     {
+        public static LiquidacionCuotaModeradoraService liquidacionCuotaModeradoraService = new LiquidacionCuotaModeradoraService();
         static void Main(string[] args)
         {
             Menu();
@@ -22,19 +23,20 @@ namespace Presentacion
             {
                 Console.Clear();
                 Console.SetCursorPosition(20, 2); Console.Write("MENU IPS MAS SALUD Y VIDA ");
-                Console.SetCursorPosition(10, 5); Console.Write("1. Refistrar Liquidacion");
-                Console.SetCursorPosition(10, 7); Console.Write("2. Mostrar Liquidaciones");
-                Console.SetCursorPosition(10, 9); Console.Write("3. Buscar Liquidaciones por Afiliacion");
-                Console.SetCursorPosition(10, 11); Console.Write("4. Buscar Liquidaciones por Cuota Moderadoras");
-                Console.SetCursorPosition(10, 13); Console.Write("5. Buscar Liquidaciones por Fecha");
-                Console.SetCursorPosition(10, 15); Console.Write("5. Eliminar Liquidaciones");
-                Console.SetCursorPosition(10, 17); Console.Write("5. Modificar Liquidaciones");
+                Console.SetCursorPosition(10, 5); Console.Write("1. Registrar Liquidacion");
+                Console.SetCursorPosition(10, 6); Console.Write("2. Mostrar Liquidaciones");
+                Console.SetCursorPosition(10, 7); Console.Write("3. Buscar Liquidaciones Tipo De Afiliacion");
+                Console.SetCursorPosition(10, 8); Console.Write("4. Buscar Liquidaciones por Cuota Moderadoras");
+                Console.SetCursorPosition(10, 9); Console.Write("5. Buscar Liquidaciones por Fecha");
+                Console.SetCursorPosition(10, 10); Console.Write("6. Eliminar Liquidaciones");
+                Console.SetCursorPosition(10, 11); Console.Write("7. Modificar Liquidaciones");
+                Console.SetCursorPosition(10, 13); Console.Write("Ingrese una Opcion: ");
                 op = int.Parse(Console.ReadLine());
-
                 switch (op)
                 {
                     case 1:
-                        //RegistrarLiquidacion();
+                        Console.Clear();
+                        AgregarLiquidacion();
                         break;
                     case 2:
                         //ConsultarTodos();
@@ -67,10 +69,10 @@ namespace Presentacion
             } while (op != 9);
         }
 
-        private static void AgregarLiquidacion(LiquidacionCuotaModeradoraService liquidacionCuotaModeradoraService)
+        private static void AgregarLiquidacion()
         {
             Console.Clear();
-            Console.WriteLine("Ingrese el numero de Liquidacion:");
+            Console.SetCursorPosition(10, 2); Console.WriteLine("Ingrese el numero de Liquidacion:");
             int numLiquidacion = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Ingrese la identificacion del Paciente:");
@@ -99,7 +101,7 @@ namespace Presentacion
             try
             {
                 fechaPersonalizada = CrearFechaPersonalizada(year, month, day);
-                LiquidacionCuotaModeradora liquidacion = new LiquidacionCuotaModeradora(numLiquidacion, idPaciente, tipoAfiliacion, salarioDevengado, valorServicio, fechaPersonalizada);
+                LiquidacionCuotaModeradora liquidacion = new LiquidacionCuotaModeradora();
                 Console.Write(liquidacionCuotaModeradoraService.Guardar(liquidacion));
                 Console.ReadKey();
             }
