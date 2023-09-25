@@ -4,3 +4,7 @@ D:\Jorman\Desktop\Proyecto\TallerProgramacion\BLL\obj\Debug\BLL.csproj.AssemblyR
 D:\Jorman\Desktop\Proyecto\TallerProgramacion\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
 C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\BLL\obj\Debug\BLL.dll
+D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\BLL\obj\Debug\BLL.pdb

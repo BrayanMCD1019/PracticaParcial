@@ -16,3 +16,9 @@ C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\Entity\obj\Debug\Entity.csp
 C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
 C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\Entity\obj\Debug\Entity.dll
 C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\Entity\obj\Debug\Entity.pdb
+D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\Entity\bin\Debug\Entity.dll
+D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\Entity\bin\Debug\Entity.pdb
+D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\Entity\obj\Debug\Entity.csproj.AssemblyReference.cache
+D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\Entity\obj\Debug\Entity.dll
+D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\Entity\obj\Debug\Entity.pdb

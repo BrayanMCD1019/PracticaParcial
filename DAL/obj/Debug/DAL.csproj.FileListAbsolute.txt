@@ -6,3 +6,12 @@ D:\Jorman\Desktop\Proyecto\TallerProgramacion\DAL\obj\Debug\DAL.pdb
 C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
 C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\DAL\obj\Debug\DAL.pdb
+D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\DAL\bin\Debug\DAL.dll
+D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\DAL\bin\Debug\DAL.pdb
+D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\DAL\bin\Debug\Entity.dll
+D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\DAL\bin\Debug\Entity.pdb
+D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\DAL\obj\Debug\DAL.dll
+D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\DAL\obj\Debug\DAL.pdb

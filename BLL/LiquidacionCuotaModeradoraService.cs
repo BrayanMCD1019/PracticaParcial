@@ -89,6 +89,11 @@ namespace BLL
             }
         }
 
+        private double CalcularTarifaAfiliadoContributivo(double salarioDevengado)
+        {
+            throw new NotImplementedException();
+        }
+
         public void ConsultarTotalLiquidacionesPorAfiliacion()
         {
             try
@@ -163,6 +168,11 @@ namespace BLL
             {
                 Console.WriteLine($"Error al consultar el valor total por tipo de afiliación: {ex.Message}");
             }
+        }
+
+        private double CalcularCuotaModeradora(LiquidacionCuotaModeradora liquidacion)
+        {
+            throw new NotImplementedException();
         }
 
         /*c) consulta que permita filtrar por tipo de afiliación totalizando cantidad de liquidaciones

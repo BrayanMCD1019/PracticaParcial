@@ -8,3 +8,6 @@ C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\Presentacion\obj\Debug\Pres
 C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
 C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\Presentacion\obj\Debug\Presentacion.exe
 C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\Presentacion\obj\Debug\Presentacion.pdb
+D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\Presentacion\obj\Debug\Presentacion.csproj.SuggestedBindingRedirects.cache
+D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
