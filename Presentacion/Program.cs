@@ -19,6 +19,7 @@ namespace Presentacion
         public static void Menu()
         {
             int op = 0;
+            LiquidacionCuotaModeradoraService liquidacion = new LiquidacionCuotaModeradoraService();
             do
             {
                 Console.Clear();
@@ -39,34 +40,37 @@ namespace Presentacion
                         AgregarLiquidacion();
                         break;
                     case 2:
-                        //ConsultarTodos();
+                        Console.Clear();
+                        liquidacion.MostrarLiquidaciones();
+                        Console.ReadKey();
                         break;
                     case 3:
-                        //ConsultarAfiliaciones();
+                        Console.Clear();
+                        liquidacion.ConsultarTotalLiquidacionesPorAfiliacion();
+                        Console.ReadKey();
                         break;
                     case 4:
-                        //ConsultarFecha();
+                        Console.Clear();
+                        liquidacion.ConsultarValorTotalPorAfiliacion();
+                        Console.ReadKey();
                         break;
                     case 5:
-                        //ConsultarAfiliacion();
+                        //ConsultarLiquidacionFecha();
                         break;
                     case 6:
-                        //ConsultarCuotaModeradora();
+                        //ConsultaridPaciente();
                         break;
                     case 7:
-                        //ConsultarFecha();
-                        break;
-                    case 8:
                         //EliminarLiquidacion();
                         break;
-                    case 9:
+                    case 8:
                         //ModificarLiquidacion();
                         break;
                     default:
                         Console.WriteLine("Opción no válida. Intente de nuevo.");
                         break;
                 }
-            } while (op != 9);
+            } while (op != 8);
         }
 
         private static void AgregarLiquidacion()
