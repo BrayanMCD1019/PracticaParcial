@@ -112,6 +112,37 @@ namespace BLL
             return tarifaCuotaModeradora;
         }
 
+        public void ConsultarTotalLiquidacionesPorAfiliacion()
+        {
+            try
+            {
+                liquidacionCuotaModeradoraList = liquidacionCuotaModeradoraRepository.ConsultarTodos();
+
+                int totalLiquidaciones = liquidacionCuotaModeradoraList.Count;
+                int totalSubsidiado = liquidacionCuotaModeradoraList.Count(l => l.tipoAfiliacion.Equals("Subsidiado", StringComparison.OrdinalIgnoreCase));
+                int totalContributivo = liquidacionCuotaModeradoraList.Count(l => l.tipoAfiliacion.Equals("Contributivo", StringComparison.OrdinalIgnoreCase));
+
+                string resultado;
+
+                if (totalLiquidaciones == 0)
+                    resultado = "No hay liquidaciones registradas.";
+                else
+                    resultado = $"Consulta por tipo de afiliación\n" +
+                    "---------------------------------------------\n" +
+                    $"Total de Liquidaciones Realizadas: {totalLiquidaciones}\n" +
+                    $"Total de Liquidaciones del Régimen Subsidiado: {totalSubsidiado}\n" +
+                    $"Total de Liquidaciones del Régimen Contributivo: {totalContributivo}\n" +
+                    "---------------------------------------------";
+
+                    Console.WriteLine(resultado);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al consultar las liquidaciones por tipo de afiliación: {ex.Message}");
+            }
+        }
+
         /*c) consulta que permita filtrar por tipo de afiliación totalizando cantidad de liquidaciones
         realizadas, liquidaciones del régimen subsidiado y liquidaciones de régimen contributivo,*/
 
