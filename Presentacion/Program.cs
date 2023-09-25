@@ -11,7 +11,7 @@ namespace Presentacion
     internal class Program
     {
         public static LiquidacionCuotaModeradoraService liquidacionCuotaModeradoraService = new LiquidacionCuotaModeradoraService();
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Menu();
         }
@@ -36,23 +36,16 @@ namespace Presentacion
                 switch (op)
                 {
                     case 1:
-                        Console.Clear();
                         AgregarLiquidacion();
                         break;
                     case 2:
-                        Console.Clear();
                         liquidacion.MostrarLiquidaciones();
-                        Console.ReadKey();
                         break;
                     case 3:
-                        Console.Clear();
                         liquidacion.ConsultarTotalLiquidacionesPorAfiliacion();
-                        Console.ReadKey();
                         break;
                     case 4:
-                        Console.Clear();
                         liquidacion.ConsultarValorTotalPorAfiliacion();
-                        Console.ReadKey();
                         break;
                     case 5:
                         //ConsultarLiquidacionFecha();
@@ -96,7 +89,7 @@ namespace Presentacion
             Console.SetCursorPosition(10, 10); Console.WriteLine("Ingrese el año:");
             int year = int.Parse(Console.ReadLine());
 
-            Console.SetCursorPosition(10,11); Console.WriteLine("Ingrese el mes (1-12):");
+            Console.SetCursorPosition(10, 11); Console.WriteLine("Ingrese el mes (1-12):");
             int month = int.Parse(Console.ReadLine());
 
             Console.SetCursorPosition(10, 12); Console.WriteLine("Ingrese el día:");
@@ -105,7 +98,7 @@ namespace Presentacion
             DateTime fechaPersonalizada;
             fechaPersonalizada = CrearFechaPersonalizada(year, month, day);
 
-            LiquidacionCuotaModeradora liquidacion = new LiquidacionCuotaModeradora(numLiquidacion,idPaciente,tipoAfiliacion,salarioDevengado,valorServicio,fechaPersonalizada);
+            LiquidacionCuotaModeradora liquidacion = new LiquidacionCuotaModeradora(numLiquidacion, idPaciente, tipoAfiliacion, salarioDevengado, valorServicio, fechaPersonalizada);
 
             Console.Write(liquidacionCuotaModeradoraService.Guardar(liquidacion));
             Console.ReadKey();
