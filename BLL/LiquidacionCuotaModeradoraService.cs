@@ -89,29 +89,6 @@ namespace BLL
             }
         }
 
-        private double CalcularTarifaAfiliadoContributivo(double salarioPaciente)
-        {
-            double salarioMinimo = 1160000;
-            double tarifaCuotaModeradora = 0;
-
-            double factor = salarioPaciente / salarioMinimo;
-
-            switch (factor)
-            {
-                case var _ when factor < 2:
-                    tarifaCuotaModeradora = 0.15;
-                    break;
-                case var _ when factor < 5:
-                    tarifaCuotaModeradora = 0.2;
-                    break;
-                default:
-                    tarifaCuotaModeradora = 0.25;
-                    break;
-            }
-
-            return tarifaCuotaModeradora;
-        }
-
         public void ConsultarTotalLiquidacionesPorAfiliacion()
         {
             try
@@ -141,6 +118,88 @@ namespace BLL
             {
                 Console.WriteLine($"Error al consultar las liquidaciones por tipo de afiliación: {ex.Message}");
             }
+        }
+
+        public void ConsultarValorTotalPorAfiliacion()
+        {
+            try
+            {
+                liquidacionCuotaModeradoraList = liquidacionCuotaModeradoraRepository.ConsultarTodos();
+
+                if (liquidacionCuotaModeradoraList.Count > 0)
+                {
+                    double valorTotalCuotasModeradoras = 0;
+                    double valorTotalSubsidiado = 0;
+                    double valorTotalContributivo = 0;
+
+                    foreach (var liquidacion in liquidacionCuotaModeradoraList)
+                    {
+                        double cuotaModeradora = CalcularCuotaModeradora(liquidacion);
+                        valorTotalCuotasModeradoras += cuotaModeradora;
+
+                        if (string.Equals(liquidacion.tipoAfiliacion, "Subsidiado", StringComparison.OrdinalIgnoreCase))
+                        {
+                            valorTotalSubsidiado += cuotaModeradora;
+                        }
+                        else if (string.Equals(liquidacion.tipoAfiliacion, "Contributivo", StringComparison.OrdinalIgnoreCase))
+                        {
+                            valorTotalContributivo += cuotaModeradora;
+                        }
+                    }
+
+                    Console.WriteLine("Consulta de valor total por tipo de afiliación");
+                    Console.WriteLine("--------------------------------------------");
+                    Console.WriteLine($"Valor Total de Cuotas Moderadoras Liquidadas: {valorTotalCuotasModeradoras}");
+                    Console.WriteLine($"Valor Total Liquidado por Régimen Subsidiado: {valorTotalSubsidiado}");
+                    Console.WriteLine($"Valor Total Liquidado por Régimen Contributivo: {valorTotalContributivo}");
+                    Console.WriteLine("--------------------------------------------");
+                }
+                else
+                {
+                    Console.WriteLine("No hay liquidaciones registradas.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al consultar el valor total por tipo de afiliación: {ex.Message}");
+            }
+        }
+
+        private double CalcularCuotaModeradora(LiquidacionCuotaModeradora liquidacion)
+        {
+            const double TarifaSubsidiado = 0.5;
+            const double TopeMaximo = 200000;
+
+            double tarifaCuotaModeradora = liquidacion.tipoAfiliacion.Equals("Subsidiado", StringComparison.OrdinalIgnoreCase)
+                ? TarifaSubsidiado
+                : CalcularTarifaAfiliadoContributivo(liquidacion.salarioDevengado);
+
+            double cuotaModeradora = liquidacion.valorServicio * tarifaCuotaModeradora;
+
+            return cuotaModeradora <= TopeMaximo ? cuotaModeradora : TopeMaximo;
+        }
+
+        private double CalcularTarifaAfiliadoContributivo(double saliarioDevengado)
+        {
+            double salarioMinimo = 1160000;
+            double tarifaCuotaModeradora = 0;
+
+            double factor = saliarioDevengado / salarioMinimo;
+
+            switch (factor)
+            {
+                case var _ when factor < 2:
+                    tarifaCuotaModeradora = 0.15;
+                    break;
+                case var _ when factor < 5:
+                    tarifaCuotaModeradora = 0.2;
+                    break;
+                default:
+                    tarifaCuotaModeradora = 0.25;
+                    break;
+            }
+
+            return tarifaCuotaModeradora;
         }
 
         /*c) consulta que permita filtrar por tipo de afiliación totalizando cantidad de liquidaciones

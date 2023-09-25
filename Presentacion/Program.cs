@@ -78,7 +78,7 @@ namespace Presentacion
             Console.WriteLine("Ingrese la identificacion del Paciente:");
             int idPaciente = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Ingrese el tipo de afiliacion:");
+            Console.WriteLine("Ingrese el tipo de afiliacion (subsidiado / contributivo):");
             String tipoAfiliacion = Console.ReadLine();
 
             Console.WriteLine("Ingrese el salario devengado:");
