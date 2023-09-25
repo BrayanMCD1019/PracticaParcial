@@ -165,43 +165,6 @@ namespace BLL
             }
         }
 
-        private double CalcularCuotaModeradora(LiquidacionCuotaModeradora liquidacion)
-        {
-            const double TarifaSubsidiado = 0.5;
-            const double TopeMaximo = 200000;
-
-            double tarifaCuotaModeradora = liquidacion.tipoAfiliacion.Equals("Subsidiado", StringComparison.OrdinalIgnoreCase)
-                ? TarifaSubsidiado
-                : CalcularTarifaAfiliadoContributivo(liquidacion.salarioDevengado);
-
-            double cuotaModeradora = liquidacion.valorServicio * tarifaCuotaModeradora;
-
-            return cuotaModeradora <= TopeMaximo ? cuotaModeradora : TopeMaximo;
-        }
-
-        private double CalcularTarifaAfiliadoContributivo(double saliarioDevengado)
-        {
-            double salarioMinimo = 1160000;
-            double tarifaCuotaModeradora = 0;
-
-            double factor = saliarioDevengado / salarioMinimo;
-
-            switch (factor)
-            {
-                case var _ when factor < 2:
-                    tarifaCuotaModeradora = 0.15;
-                    break;
-                case var _ when factor < 5:
-                    tarifaCuotaModeradora = 0.2;
-                    break;
-                default:
-                    tarifaCuotaModeradora = 0.25;
-                    break;
-            }
-
-            return tarifaCuotaModeradora;
-        }
-
         /*c) consulta que permita filtrar por tipo de afiliación totalizando cantidad de liquidaciones
         realizadas, liquidaciones del régimen subsidiado y liquidaciones de régimen contributivo,*/
 
