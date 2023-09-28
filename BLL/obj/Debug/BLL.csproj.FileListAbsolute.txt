@@ -8,3 +8,12 @@ D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\BLL\obj\Debug\BLL.csproj.AssemblyRefe
 D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\BLL\obj\Debug\BLL.dll
 D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\BLL\obj\Debug\BLL.pdb
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\BLL\bin\Debug\BLL.dll
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\BLL\bin\Debug\BLL.pdb
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\BLL\bin\Debug\DAL.dll
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\BLL\bin\Debug\Entity.dll
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\BLL\bin\Debug\DAL.pdb
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\BLL\bin\Debug\Entity.pdb
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\BLL\obj\Debug\BLL.dll
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\BLL\obj\Debug\BLL.pdb

@@ -30,13 +30,13 @@ namespace Entity
             this.salarioDevengado = salarioDevengado;
             this.valorServicio = valorServicio;
             this.fechaLiquidacion = fechaLiquidacion;
-            this.cuotaModerada = CalcularCuotaModeradora();
-            this.tarifa = CalcularTarifa();
+            this.cuotaModerada = 2222; //CalcularCuotaModeradora();
+            this.tarifa = 2222; //CalcularTarifa();
         }
 
         public override string ToString()
         {
-            return $"{numLiquidacion};{idPaciente};{tipoAfiliacion};{salarioDevengado};{valorServicio};{fechaLiquidacion};{cuotaModerada};{tarifa};";
+            return $"{numLiquidacion};{idPaciente};{tipoAfiliacion};{salarioDevengado};{valorServicio};{fechaLiquidacion.Date.ToString("dd/MM/yyyy")};{cuotaModerada};{tarifa}";
         }
 
         private double CalcularCuotaModeradora()

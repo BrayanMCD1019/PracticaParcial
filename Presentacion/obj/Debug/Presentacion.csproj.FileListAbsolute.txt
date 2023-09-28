@@ -11,3 +11,13 @@ C:\Users\braya\OneDrive\Documentos\C#\PracticaTaller\Presentacion\obj\Debug\Pres
 D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
 D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\Presentacion\obj\Debug\Presentacion.csproj.SuggestedBindingRedirects.cache
 D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\Presentacion\bin\Debug\Presentacion.exe.config
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\Presentacion\bin\Debug\Presentacion.exe
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\Presentacion\bin\Debug\Presentacion.pdb
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\Presentacion\bin\Debug\BLL.dll
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\Presentacion\bin\Debug\Entity.dll
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\Presentacion\bin\Debug\DAL.dll
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\Presentacion\bin\Debug\BLL.pdb
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\Presentacion\bin\Debug\Entity.pdb
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\Presentacion\bin\Debug\DAL.pdb
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete

@@ -13,7 +13,6 @@ namespace DAL
         string fileName = "liquidaciones.txt";
         public string Guardar(LiquidacionCuotaModeradora liquidacionCuotaModeradora)
         {
-
             var escritor = new StreamWriter(fileName, true);
             escritor.WriteLine(liquidacionCuotaModeradora.ToString());
             escritor.Close();

@@ -15,3 +15,9 @@ D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\DAL\obj\Debug\DAL.csproj.CoreCompileI
 D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\DAL\obj\Debug\DAL.dll
 D:\UNICESAR-2023\P3\GRUPO-02\corte2\brayan\DAL\obj\Debug\DAL.pdb
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\DAL\bin\Debug\DAL.dll
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\DAL\bin\Debug\DAL.pdb
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\DAL\bin\Debug\Entity.dll
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\DAL\bin\Debug\Entity.pdb
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\Jorman\Desktop\Proyecto\TallerProgramacion\DAL\obj\Debug\DAL.dll
