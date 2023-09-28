@@ -20,6 +20,7 @@ namespace BLL
         }
 
         //a) registrar liquidacion
+
         public String Guardar(LiquidacionCuotaModeradora liquidacionCuotaModeradora)
         {
             if (liquidacionCuotaModeradora == null)
@@ -32,15 +33,45 @@ namespace BLL
             return msg;
         }
 
-        //4. eliminar liquidacion
-        public bool EliminarEstablecimiento(int numLiquidacion)
+        public void AgregarLiquidacion()
         {
-            return liquidacionCuotaModeradoraRepository.Eliminar(numLiquidacion);
+            Console.Clear();
+            Console.SetCursorPosition(20, 2); Console.Write("AGREGAR LIQUIDACION");
+
+            Console.SetCursorPosition(10, 5); Console.Write("Ingrese el numero de Liquidacion:");
+            int numLiquidacion = int.Parse(Console.ReadLine());
+
+            Console.SetCursorPosition(10, 6); Console.Write("Ingrese la identificacion del Paciente:");
+            int idPaciente = int.Parse(Console.ReadLine());
+
+            Console.SetCursorPosition(10, 7); Console.Write("Ingrese el tipo de afiliacion (subsidiado / contributivo):");
+            string tipoAfiliacion = Console.ReadLine();
+
+            Console.SetCursorPosition(10, 8); Console.Write("Ingrese el salario devengado:");
+            double salarioDevengado = double.Parse(Console.ReadLine());
+
+            Console.SetCursorPosition(10, 9); Console.Write("Ingrese el valor del servicio:");
+            double valorServicio = int.Parse(Console.ReadLine());
+
+            Console.SetCursorPosition(10, 10); Console.Write("Ingrese el año:");
+            int year = int.Parse(Console.ReadLine());
+
+            Console.SetCursorPosition(10, 11); Console.Write("Ingrese el mes (1-12):");
+            int month = int.Parse(Console.ReadLine());
+
+            Console.SetCursorPosition(10, 12); Console.Write("Ingrese el día:");
+            int day = int.Parse(Console.ReadLine());
+
+            DateTime fechaPersonalizada = CrearFechaPersonalizada(year, month, day);
+
+            LiquidacionCuotaModeradora liquidacion = new LiquidacionCuotaModeradora(numLiquidacion, idPaciente, tipoAfiliacion, salarioDevengado, valorServicio, fechaPersonalizada);
+            Console.SetCursorPosition(10, 14); Console.Write(Guardar(liquidacion));
+            Console.ReadKey();
         }
-
-        //5. modificar liquidacion
-
-
+        public DateTime CrearFechaPersonalizada(int year, int month, int day)
+        {
+            return new DateTime(year, month, day);
+        }
 
         //b) visualizar todas las liquidaciones
         public List<LiquidacionCuotaModeradora> ConsultarTodos()
@@ -55,9 +86,9 @@ namespace BLL
             Console.SetCursorPosition(1, 5); Console.Write("--------------------------------------------------------------------------------------------------------------------------------------------------------------");
             Console.SetCursorPosition(1, 6); Console.Write("| Numero De Liquidacion |    Id Paciente    | Tipo Afiliacion |  salarioDevengado  |  valorServicio  |  fechaLiquidacion  |    tarifa    |   cuotaModerada   |");
             Console.SetCursorPosition(1, 7); Console.Write("--------------------------------------------------------------------------------------------------------------------------------------------------------------");
-
+            
             int posicion = 8;
-            foreach (var item in ConsultarTodos())
+            foreach (var item in liquidacionCuotaModeradoraRepository.ConsultarTodos())
             {
                 Console.SetCursorPosition(2,posicion); Console.Write(item.numLiquidacion);
                 Console.SetCursorPosition(27,posicion); Console.Write(item.idPaciente);
@@ -72,13 +103,65 @@ namespace BLL
             Console.ReadKey();
         }
 
-        private double CalcularTarifaAfiliadoContributivo(double salarioDevengado)
+        //4. eliminar liquidacion
+        public void EliminarLiquidacion()
         {
-            throw new NotImplementedException();
+            try
+            {
+                Console.Clear();
+                Console.SetCursorPosition(20, 2); Console.Write("ELIMINAR LIQUIDACION");
+                Console.SetCursorPosition(1, 5); Console.Write("--------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                Console.SetCursorPosition(1, 6); Console.Write("| Numero De Liquidacion |    Id Paciente    | Tipo Afiliacion |  salarioDevengado  |  valorServicio  |  fechaLiquidacion  |    tarifa    |   cuotaModerada   |");
+                Console.SetCursorPosition(1, 7); Console.Write("--------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                List<LiquidacionCuotaModeradora> liquidaciones = ConsultarTodos();
+                int posicion = 8;
+                foreach (var item in liquidacionCuotaModeradoraRepository.ConsultarTodos())
+                {
+                    Console.SetCursorPosition(2, posicion); Console.Write(item.numLiquidacion);
+                    Console.SetCursorPosition(27, posicion); Console.Write(item.idPaciente);
+                    Console.SetCursorPosition(47, posicion); Console.Write(item.tipoAfiliacion);
+                    Console.SetCursorPosition(66, posicion); Console.Write(item.salarioDevengado);
+                    Console.SetCursorPosition(87, posicion); Console.Write(item.valorServicio);
+                    Console.SetCursorPosition(105, posicion); Console.Write(item.fechaLiquidacion.Date.ToString("dd/MM/yyyy"));
+                    Console.SetCursorPosition(126, posicion); Console.Write(item.tarifa);
+                    Console.SetCursorPosition(141, posicion); Console.Write(item.cuotaModerada);
+                    posicion++;
+                }
+                Console.SetCursorPosition(10, posicion+2); Console.Write("INGRESE EL NUMERO DE LIQUIDACION A ELIMINAR: ");
+                int numeroLiquidacion = int.Parse(Console.ReadLine());
+                LiquidacionCuotaModeradora liquidacion = liquidacionCuotaModeradoraRepository.Buscar(numeroLiquidacion);
+
+                if (liquidacion != null)
+                {
+                    liquidacionCuotaModeradoraRepository.EliminarLiquidacion(numeroLiquidacion);
+                    Console.SetCursorPosition(10, posicion + 4); Console.WriteLine($"Se eliminó la liquidación con número de liquidación {numeroLiquidacion} satisfactoriamente.");
+                    Console.ReadKey();
+                }
+                else
+                {
+                    Console.SetCursorPosition(10, posicion + 4);Console.WriteLine($"No se encontró ninguna liquidación con el número de liquidación {numeroLiquidacion}.");
+                    Console.ReadKey();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al eliminar la liquidación: {ex.Message}");
+            }
         }
+
+
+        //5. modificar liquidacion
+
+
+
+
+        /*c) consulta que permita filtrar por tipo de afiliación totalizando cantidad de liquidaciones
+        realizadas, liquidaciones del régimen subsidiado y liquidaciones de régimen contributivo,*/
 
         public void ConsultarTotalLiquidacionesPorAfiliacion()
         {
+            Console.Clear();
+            Console.SetCursorPosition(20, 2); Console.Write("CONSULTAS POR TIPO DE AFILIACION");
             try
             {
                 liquidacionCuotaModeradoraList = liquidacionCuotaModeradoraRepository.ConsultarTodos();
@@ -92,7 +175,7 @@ namespace BLL
                 if (totalLiquidaciones == 0)
                     resultado = "No hay liquidaciones registradas.";
                 else
-                    resultado = $"Consulta por tipo de afiliación\n" +
+                    Console.SetCursorPosition(0,4);resultado =
                     "---------------------------------------------\n" +
                     $"Total de Liquidaciones Realizadas: {totalLiquidaciones}\n" +
                     $"Total de Liquidaciones del Régimen Subsidiado: {totalSubsidiado}\n" +
@@ -106,10 +189,17 @@ namespace BLL
             {
                 Console.WriteLine($"Error al consultar las liquidaciones por tipo de afiliación: {ex.Message}");
             }
+            Console.ReadKey();
         }
+
+
+        /*d) consulta que permita visualizar el valor total de las cuotas moderadoras liquidadas y el valor
+        total liquidado por tipo de afiliación régimen subsidiado y régimen contributivo*/
 
         public void ConsultarValorTotalPorAfiliacion()
         {
+            Console.Clear();
+            Console.SetCursorPosition(20, 2); Console.Write("CONSULTA DE VALOR TOTAL POR TIPO DE AFILIACION");
             try
             {
                 liquidacionCuotaModeradoraList = liquidacionCuotaModeradoraRepository.ConsultarTodos();
@@ -122,7 +212,7 @@ namespace BLL
 
                     foreach (var liquidacion in liquidacionCuotaModeradoraList)
                     {
-                        double cuotaModeradora = CalcularCuotaModeradora(liquidacion);
+                        double cuotaModeradora = liquidacion.cuotaModerada;
                         valorTotalCuotasModeradoras += cuotaModeradora;
 
                         if (string.Equals(liquidacion.tipoAfiliacion, "Subsidiado", StringComparison.OrdinalIgnoreCase))
@@ -135,12 +225,10 @@ namespace BLL
                         }
                     }
 
-                    Console.WriteLine("Consulta de valor total por tipo de afiliación");
-                    Console.WriteLine("--------------------------------------------");
-                    Console.WriteLine($"Valor Total de Cuotas Moderadoras Liquidadas: {valorTotalCuotasModeradoras}");
-                    Console.WriteLine($"Valor Total Liquidado por Régimen Subsidiado: {valorTotalSubsidiado}");
-                    Console.WriteLine($"Valor Total Liquidado por Régimen Contributivo: {valorTotalContributivo}");
-                    Console.WriteLine("--------------------------------------------");
+                    Console.SetCursorPosition(10, 4); Console.WriteLine($"Valor Total de Cuotas Moderadoras Liquidadas: {valorTotalCuotasModeradoras}");
+                    Console.SetCursorPosition(10, 5); Console.WriteLine($"Valor Total Liquidado por Régimen Subsidiado: {valorTotalSubsidiado}");
+                    Console.SetCursorPosition(10, 6); Console.WriteLine($"Valor Total Liquidado por Régimen Contributivo: {valorTotalContributivo}");
+                    
                 }
                 else
                 {
@@ -151,23 +239,14 @@ namespace BLL
             {
                 Console.WriteLine($"Error al consultar el valor total por tipo de afiliación: {ex.Message}");
             }
+            Console.ReadKey();
         }
-
-        private double CalcularCuotaModeradora(LiquidacionCuotaModeradora liquidacion)
-        {
-            throw new NotImplementedException();
-        }
-
-        /*c) consulta que permita filtrar por tipo de afiliación totalizando cantidad de liquidaciones
-        realizadas, liquidaciones del régimen subsidiado y liquidaciones de régimen contributivo,*/
-
-
-        /*d) consulta que permita visualizar el valor total de las cuotas moderadoras liquidadas y el valor
-        total liquidado por tipo de afiliación régimen subsidiado y régimen contributivo*/
-
 
         /*e) consulta que permita filtrar las liquidaciones realizadas en un mes y año especifico, mostrando
         los totalizado del punto c y d*/
+
+
+
 
 
         //f) consulta que permita filtrar por nombres que coincidan con la palabra digitada

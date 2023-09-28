@@ -33,16 +33,16 @@ namespace DAL
 
         public List<LiquidacionCuotaModeradora> ConsultarTodos()
         {
-            var listaPersonas = new List<LiquidacionCuotaModeradora>();
+            var listaLiquidaciones = new List<LiquidacionCuotaModeradora>();
             try
             {
                 StreamReader lector = new StreamReader(fileName);
                 while (!lector.EndOfStream)
                 {
-                    listaPersonas.Add(Map(lector.ReadLine()));
+                    listaLiquidaciones.Add(Map(lector.ReadLine()));
                 }
                 lector.Close();
-                return listaPersonas;
+                return listaLiquidaciones;
             }
             catch (Exception)
             {
@@ -50,33 +50,32 @@ namespace DAL
             }
         }
 
-        public bool Eliminar(int numLiquidacion)
+        public void EliminarLiquidacion(int numeroLiquidacion)
         {
             try
             {
-                var listaLiquidaciones = ConsultarTodos();
-                if (listaLiquidaciones != null)
+                List<LiquidacionCuotaModeradora> liquidaciones = ConsultarTodos();
+                FileStream file = new FileStream(fileName, FileMode.Create);
+                file.Close();
+
+                foreach (var item in liquidaciones)
                 {
-                    var LiquidacionAEliminar = listaLiquidaciones.FirstOrDefault(liq => liq.numLiquidacion == numLiquidacion);
-                    if (LiquidacionAEliminar != null)
+                    if (item.numLiquidacion != numeroLiquidacion)
                     {
-                        listaLiquidaciones.Remove(LiquidacionAEliminar);
-                        using (var escritor = new StreamWriter(fileName, false))
-                        {
-                            foreach (var liquidacion in listaLiquidaciones)
-                            {
-                                escritor.WriteLine(liquidacion.ToString());
-                            }
-                        }
-                        return true;
+                        Guardar(item);
                     }
                 }
             }
-            catch (IOException)
+            catch (Exception ex)
             {
-                Console.WriteLine("Error al Eliminar la liquidacion...");
+                throw new Exception($"Error al eliminar la liquidación: {ex.Message}");
             }
-            return false;
+        }
+
+        public LiquidacionCuotaModeradora Buscar(int numeroLiquidacion)
+        {
+            List<LiquidacionCuotaModeradora> liquidaciones = ConsultarTodos();
+            return liquidaciones.FirstOrDefault(liq => liq.numLiquidacion == numeroLiquidacion);
         }
 
         private LiquidacionCuotaModeradora Map(string linea)

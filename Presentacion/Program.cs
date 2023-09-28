@@ -38,7 +38,7 @@ namespace Presentacion
                 switch (op)
                 {
                     case 1:
-                        AgregarLiquidacion();
+                        liquidacionCuotaModeradoraService.AgregarLiquidacion();
                         break;
                     case 2:
                         liquidacionCuotaModeradoraService.MostrarLiquidaciones();
@@ -53,7 +53,7 @@ namespace Presentacion
                         //ConsultarLiquidacionFecha();
                         break;
                     case 6:
-                        //ConsultaridPaciente();
+                        liquidacionCuotaModeradoraService.EliminarLiquidacion();
                         break;
                     case 7:
                         //EliminarLiquidacion();
@@ -67,46 +67,5 @@ namespace Presentacion
                 }
             } while (op != 8);
         }
-
-        private static void AgregarLiquidacion()
-        {
-            Console.Clear();
-            Console.SetCursorPosition(20, 2);Console.Write("AGREGAR LIQUIDACION");
-
-            Console.SetCursorPosition(10, 5);Console.Write("Ingrese el numero de Liquidacion:");
-            int numLiquidacion = int.Parse(Console.ReadLine());
-
-            Console.SetCursorPosition(10, 6); Console.Write("Ingrese la identificacion del Paciente:");
-            int idPaciente = int.Parse(Console.ReadLine());
-
-            Console.SetCursorPosition(10, 7); Console.Write("Ingrese el tipo de afiliacion (subsidiado / contributivo):");
-            string tipoAfiliacion = Console.ReadLine();
-
-            Console.SetCursorPosition(10, 8); Console.Write("Ingrese el salario devengado:");
-            double salarioDevengado = double.Parse(Console.ReadLine());
-
-            Console.SetCursorPosition(10, 9); Console.Write("Ingrese el valor del servicio:");
-            double valorServicio = int.Parse(Console.ReadLine());
-
-            Console.SetCursorPosition(10, 10); Console.Write("Ingrese el año:");
-            int year = int.Parse(Console.ReadLine());
-
-            Console.SetCursorPosition(10, 11); Console.Write("Ingrese el mes (1-12):");
-            int month = int.Parse(Console.ReadLine());
-
-            Console.SetCursorPosition(10, 12); Console.Write("Ingrese el día:");
-            int day = int.Parse(Console.ReadLine());
-
-            DateTime fechaPersonalizada = CrearFechaPersonalizada(year, month, day);
-
-            LiquidacionCuotaModeradora liquidacion = new LiquidacionCuotaModeradora(numLiquidacion, idPaciente, tipoAfiliacion, salarioDevengado, valorServicio, fechaPersonalizada);
-            Console.SetCursorPosition(10, 14);Console.Write(liquidacionCuotaModeradoraService.Guardar(liquidacion));
-            Console.ReadKey();
-        }
-        static DateTime CrearFechaPersonalizada(int year, int month, int day)
-        {
-            return new DateTime(year, month, day);
-        }
-        
     }
 }
