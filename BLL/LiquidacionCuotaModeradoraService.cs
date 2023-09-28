@@ -50,43 +50,26 @@ namespace BLL
 
         public void MostrarLiquidaciones()
         {
-            try
+            Console.Clear();
+            Console.SetCursorPosition(20, 2); Console.Write("CONSULTAS DE LIQUIDACIONES");
+            Console.SetCursorPosition(1, 5); Console.Write("--------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            Console.SetCursorPosition(1, 6); Console.Write("| Numero De Liquidacion |    Id Paciente    | Tipo Afiliacion |  salarioDevengado  |  valorServicio  |  fechaLiquidacion  |    tarifa    |   cuotaModerada   |");
+            Console.SetCursorPosition(1, 7); Console.Write("--------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
+            int posicion = 8;
+            foreach (var item in ConsultarTodos())
             {
-                liquidacionCuotaModeradoraList = liquidacionCuotaModeradoraRepository.ConsultarTodos();
-
-                if (liquidacionCuotaModeradoraList.Count == 0)
-                {
-                    Console.WriteLine("No hay liquidaciones registradas.");
-                    return;
-                }
-
-                Console.WriteLine("Lista de liquidaciones realizadas:");
-                Console.WriteLine("-----------------------------------");
-
-                foreach (var liquidacion in liquidacionCuotaModeradoraList)
-                {
-                    double tarifaCuotaModeradora = 0;
-                    double cuotaModeradora = 0;
-
-                    tarifaCuotaModeradora = liquidacion.tipoAfiliacion.Equals("Subsidiado", StringComparison.OrdinalIgnoreCase) ? 0.5 : CalcularTarifaAfiliadoContributivo(liquidacion.salarioDevengado);
-
-                    cuotaModeradora = Math.Min(liquidacion.valorServicio * tarifaCuotaModeradora, 200000);
-
-                    Console.WriteLine($"Identificación del Paciente: {liquidacion.idPaciente}");
-                    Console.WriteLine($"Tipo de Afiliación: {liquidacion.tipoAfiliacion}");
-                    Console.WriteLine($"Salario Devengado por el Paciente: {liquidacion.salarioDevengado}");
-                    Console.WriteLine($"Valor del Servicio de Hospitalización Prestado: {liquidacion.valorServicio}");
-                    Console.WriteLine($"Tarifa Aplicada: {tarifaCuotaModeradora}");
-                    Console.WriteLine($"Valor Liquidado Real de la Cuota Moderadora: {cuotaModeradora}");
-                    Console.WriteLine(cuotaModeradora == 200000 ? "Se aplicó el tope máximo." : "No se aplicó el tope máximo.");
-                    Console.WriteLine($"Valor de la Cuota Moderadora: {cuotaModeradora}");
-                    Console.WriteLine("-----------------------------------");
-                }
+                Console.SetCursorPosition(2,posicion); Console.Write(item.numLiquidacion);
+                Console.SetCursorPosition(27,posicion); Console.Write(item.idPaciente);
+                Console.SetCursorPosition(47,posicion); Console.Write(item.tipoAfiliacion);
+                Console.SetCursorPosition(66,posicion); Console.Write(item.salarioDevengado);
+                Console.SetCursorPosition(87,posicion); Console.Write(item.valorServicio);
+                Console.SetCursorPosition(105,posicion); Console.Write(item.fechaLiquidacion.Date.ToString("dd/MM/yyyy"));
+                Console.SetCursorPosition(126,posicion); Console.Write(item.tarifa);
+                Console.SetCursorPosition(141,posicion); Console.Write(item.cuotaModerada);
+                posicion++;
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error al mostrar las liquidaciones: {ex.Message}");
-            }
+            Console.ReadKey();
         }
 
         private double CalcularTarifaAfiliadoContributivo(double salarioDevengado)

@@ -15,8 +15,8 @@ namespace Entity
         public double salarioDevengado { get; set; }
         public double valorServicio { get; set; }
         public DateTime fechaLiquidacion { get; set; }
-        public double cuotaModerada { get; set; }
         public double tarifa { get; set; }
+        public double cuotaModerada { get; set; }
 
         public LiquidacionCuotaModeradora()
         {
@@ -30,22 +30,19 @@ namespace Entity
             this.salarioDevengado = salarioDevengado;
             this.valorServicio = valorServicio;
             this.fechaLiquidacion = fechaLiquidacion;
-            this.cuotaModerada = 2222; //CalcularCuotaModeradora();
-            this.tarifa = 2222; //CalcularTarifa();
+            this.tarifa = CalcularTarifa();
+            this.cuotaModerada = CalcularCuotaModeradora();
         }
 
         public override string ToString()
         {
-            return $"{numLiquidacion};{idPaciente};{tipoAfiliacion};{salarioDevengado};{valorServicio};{fechaLiquidacion.Date.ToString("dd/MM/yyyy")};{cuotaModerada};{tarifa}";
+            return $"{numLiquidacion};{idPaciente};{tipoAfiliacion};{salarioDevengado};{valorServicio};{fechaLiquidacion.Date.ToString("dd/MM/yyyy")};{tarifa};{cuotaModerada}";
         }
 
         private double CalcularCuotaModeradora()
         {
             const double TopeMaximo = 200000;
-
-            double tarifaCuotaModeradora = this.tarifa;
-
-            double cuotaModeradora = this.valorServicio * tarifaCuotaModeradora;
+            double cuotaModeradora = this.valorServicio * this.tarifa;
 
             return cuotaModeradora <= TopeMaximo ? cuotaModeradora : TopeMaximo;
         }

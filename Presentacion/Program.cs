@@ -14,6 +14,7 @@ namespace Presentacion
         public static LiquidacionCuotaModeradoraService liquidacionCuotaModeradoraService = new LiquidacionCuotaModeradoraService();
         public static void Main(string[] args)
         {
+            Console.BufferWidth = 200;
             Menu();
         }
 

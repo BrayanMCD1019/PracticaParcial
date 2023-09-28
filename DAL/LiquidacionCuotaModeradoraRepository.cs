@@ -84,12 +84,12 @@ namespace DAL
             var liq = new LiquidacionCuotaModeradora();
             liq.numLiquidacion= int.Parse(linea.Split(';')[0]);
             liq.idPaciente = int.Parse(linea.Split(';')[1]);
-            liq.tipoAfiliacion = linea.Split(';')[3];
-            liq.salarioDevengado = double.Parse(linea.Split(';')[4]);
-            liq.valorServicio = double.Parse(linea.Split(';')[5]);
-            liq.fechaLiquidacion= DateTime.Parse(linea.Split(';')[6]);
+            liq.tipoAfiliacion = linea.Split(';')[2];
+            liq.salarioDevengado = double.Parse(linea.Split(';')[3]);
+            liq.valorServicio = double.Parse(linea.Split(';')[4]);
+            liq.fechaLiquidacion= DateTime.Parse(linea.Split(';')[5]);
+            liq.tarifa = double.Parse(linea.Split(';')[6]); 
             liq.cuotaModerada = double.Parse(linea.Split(';')[7]);
-            liq.tarifa = double.Parse(linea.Split(';')[8]); 
             return liq;
         }
     }
